@@ -9,14 +9,12 @@
 # utilisation de libary : 
 # simplegraphics-python et openpyxl
 #
+from time import sleep
 
 import openpyxl
-import SimpleGraphics
 
-
-
-
-
+import classes
+from classes import *
 # initialisation #
 
 tableau_excel = "Coordonnées_points.xlsx"
@@ -28,23 +26,16 @@ Sheet = File.active
 
 
 
-List_points = {} 
+def setup():
+    SimpleGraphics.resize(1200, 900)
+    nuage = classes.PointCloud()
+    nuage.GetPoints(Sheet)
+    nuage.addPoint(400,450, "green")
+    nuage.addPoint(400,300, "purple")
+    nuage.addPoint(400,550, "black")
 
+    for i in nuage.List_points:
+        print(i.color)
 
-class Point:
-    def __init__(self, x, y):
-        self.x = x # Position en x
-        self.y = y # Position en y
-
-    def draw(self):     
-        for row in Sheet.iter_rows(min_row=2, values_only=True):
-            x_coord = row[0]
-            y_coord = row[1]
-            SimpleGraphics.draw_circle(x_coord, y_coord, 5, fill='red')
-
-
-
-SimpleGraphics.resize(1200, 900)
-
-point = Point(400, 400)
-point.draw()
+if __name__ == "__main__":
+        setup()
