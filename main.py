@@ -12,10 +12,7 @@
 
 import openpyxl
 import SimpleGraphics
-
-
-
-
+from SimpleGraphics import circle
 
 # initialisation #
 
@@ -28,7 +25,7 @@ Sheet = File.active
 
 
 
-List_points = {} 
+List_points = []
 
 
 class Point:
@@ -36,15 +33,22 @@ class Point:
         self.x = x # Position en x
         self.y = y # Position en y
 
-    def draw(self):     
+
+class PointCloud:
+    def __init__(self):
+        pass
+    def GetPoints(self):
         for row in Sheet.iter_rows(min_row=2, values_only=True):
-            x_coord = row[0]
-            y_coord = row[1]
-            SimpleGraphics.draw_circle(x_coord, y_coord, 5, fill='red')
-
-
-
+            List_points.append(Point(row[1],row[2]))
+    def draw(self):
+        for p in List_points:
+            circle(p.x,p.y ,100 )
+            text
 SimpleGraphics.resize(1200, 900)
 
-point = Point(400, 400)
-point.draw()
+
+nuage = PointCloud
+nuage.GetPoints(nuage)
+for i in List_points:
+    print(i.x,i.y)
+nuage.draw(nuage)
