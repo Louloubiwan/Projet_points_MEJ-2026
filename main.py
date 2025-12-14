@@ -9,14 +9,16 @@
 # utilisation de libary : 
 # simplegraphics-python et openpyxl
 #
+import random
 from time import sleep
-
+from moyenneDesPoints import *
 import openpyxl
 
 import classes
 from classes import *
 # initialisation #
-
+screen_width= 1200
+screen_height = 900
 tableau_excel = "Coordonnées_points.xlsx"
 
 
@@ -27,15 +29,10 @@ Sheet = File.active
 
 
 def setup():
-    SimpleGraphics.resize(1200, 900)
+    SimpleGraphics.resize(screen_width, screen_height)
     nuage = classes.PointCloud()
-    nuage.GetPoints(Sheet)
-    nuage.addPoint(400,450, "green")
-    nuage.addPoint(400,300, "purple")
-    nuage.addPoint(400,550, "black")
-
-    for i in nuage.List_points:
-        print(i.color)
-
+    nuage.createRandomPoints(10000,screen_width,screen_height )
+    Moyenne(nuage)
 if __name__ == "__main__":
+        random.seed()
         setup()

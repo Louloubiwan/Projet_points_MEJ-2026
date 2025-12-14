@@ -1,4 +1,5 @@
-import openpyxl
+import random
+
 import SimpleGraphics
 
 
@@ -16,14 +17,22 @@ class PointCloud:
     def GetPoints(self,sheet):
         for row in sheet.iter_rows(min_row=2, values_only=True):
             self.addPoint(row[1],row[2], "red")
+
     def addPoint(self, x,y, color):
         self.List_points.append(Point(x, y, color))
         self.drawSinglePoint(x,y, color)
-    def drawAllPoints(self, color): # elle sert a rien mais on va quand meme la garder au cas ou
+
+    def drawAllPoints(self): # elle sert a rien mais on va quand meme la garder au cas ou
         for p in self.List_points:
             print("color = " , p.color)
             SimpleGraphics.setFill(p.color)
             SimpleGraphics.circle(p.x,p.y ,10)
-    def drawSinglePoint(self,x,y,color):
+
+    @staticmethod
+    def drawSinglePoint(x, y, color):
         SimpleGraphics.setFill(color)
         SimpleGraphics.circle(x,y, 10)
+
+    def createRandomPoints(self,number_of_points, bound_x , bound_y):
+        for i in range(number_of_points):
+            self.addPoint(random.randrange(0, bound_x), random.randrange(0, bound_y) , "red")
