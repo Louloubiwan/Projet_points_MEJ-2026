@@ -29,7 +29,7 @@ Sheet = File.active
 def setup():
     SimpleGraphics.resize(screen_width, screen_height)
     nuage = classes.PointCloud()
-    nuage.createRandomPoints(5,screen_width,screen_height )
+    nuage.createRandomPoints(100000,screen_width,screen_height )
     Moyenne(nuage)
 if __name__ == "__main__":
         random.seed()

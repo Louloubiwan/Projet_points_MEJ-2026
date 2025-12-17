@@ -8,4 +8,4 @@ def Moyenne(nuage: PointCloud):
     moyenne_x = moyenne_x/ len(nuage.List_points)
     moyenne_y = moyenne_y/ len(nuage.List_points)
     print(moyenne_x, moyenne_y)
-    nuage.drawSinglePoint(moyenne_x, moyenne_y ,"blue")
+    nuage.drawSinglePoint(moyenne_x, moyenne_y ,"grey")
