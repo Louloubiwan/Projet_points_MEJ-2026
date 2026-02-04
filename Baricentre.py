@@ -19,14 +19,8 @@ def baricentre(points : PointCloud):
 
             CouplePoint[p_next] = (points2X, points2Y)
 
-            if points1X > points2X:
-                MiddlePointX = (points1X - points2X)
-            elif points2X > points1X:
-                MiddlePointX = (points2X - points1X)
-            if points1Y > points2Y:
-                MiddlePointY = (points1Y - points2Y)
-            elif points2Y > points1Y:
-                MiddlePointY = (points2Y - points1Y)
+            MiddlePointX = (points1X + points2X) / 2
+            MiddlePointY = (points1Y + points2Y) / 2
             Baricentre[p] = (MiddlePointX, MiddlePointY)
  
 
@@ -45,18 +39,10 @@ def baricentre(points : PointCloud):
                 points2Y_baricentre = Baricentre[point2][1]
                 CouplePoint[point2] = (points2X_baricentre, points2Y_baricentre)
 
-                if points1X_baricentre > points2X_baricentre:
-                    MiddlePoint_baricentreX = (points1X_baricentre - points2X_baricentre)
-                else:
-                    MiddlePoint_baricentreX = (points2X_baricentre - points1X_baricentre)
-
-                if points1Y_baricentre > points2Y_baricentre:
-                    MiddlePoint_baricentreY = (points1Y_baricentre - points2Y_baricentre)
-                else:
-                    MiddlePoint_baricentreY = (points2Y_baricentre - points1Y_baricentre)
+                MiddlePoint_baricentreX = (points1X_baricentre + points2X_baricentre) / 2
+                MiddlePoint_baricentreY = (points1Y_baricentre + points2Y_baricentre) / 2
                 MiddlePoint_baricentre = (MiddlePoint_baricentreX, MiddlePoint_baricentreY)
 
-                print(MiddlePoint_baricentre)
                 del Baricentre[point1]
                 if point2 in Baricentre:
                     del Baricentre[point2]
@@ -65,8 +51,6 @@ def baricentre(points : PointCloud):
 
     final_baricentre_coords = list(Baricentre.values())[0]
     points.drawSinglePoint(final_baricentre_coords[0], final_baricentre_coords[1], "blue")
-    print(final_baricentre_coords[0])
-    print(final_baricentre_coords[1])
     return
             
                 

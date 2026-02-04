@@ -46,7 +46,7 @@ def Input():
             reponse = str(input("Séléctionner un paramètre : "))
 
             if reponse == "1":
-                nombre_de_points = int(input("Combien de points voulez-vous afficher ?"))
+                nombre_de_points = int(input("Combien de points voulez-vous afficher ? : "))
                 nuage.createRandomPoints(nombre_de_points,screen_width,screen_height)
                 setup()
 

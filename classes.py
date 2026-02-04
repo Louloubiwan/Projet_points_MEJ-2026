@@ -62,16 +62,3 @@ class PointCloud:
     def getPositions(self):
         # Just return all positions as a list
         return list(self.List_points.values())
-
-    def OptimizeCloud(self):
-        points = list(self.List_points.keys())  # List of Point objects
-        coords = list(self.List_points.values())  # List of coordinates
-        tree = KDTree(coords)
-        TempDict = {}
-        for i, p in enumerate(points):
-            # Query the 2 nearest points: itself + nearest neighbor
-            distance, idx = tree.query(p.position, k=2)
-            nearest_point = points[idx[1]]  # Nearest OTHER point
-            nearest_distance = distance[1]  # Distance to nearest OTHER point
-            TempDict[(p.position)] = (idx, nearest_point, nearest_distance)
-        print(TempDict)
