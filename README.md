@@ -8,6 +8,6 @@ notre projet est "simple" nous cherchons a trouver un maximum de méthodes pour 
 
 pour l'instant nous avons trouver X méthodes differentes:
 
-méthode par la moyenne [x] 
-méthode par le baricentre [x] 
+ [x] méthode par la moyenne
+ [x] méthode par le baricentre 
  
