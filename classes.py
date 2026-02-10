@@ -62,3 +62,5 @@ class PointCloud:
     def getPositions(self):
         # Just return all positions as a list
         return list(self.List_points.values())
+
+
