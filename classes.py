@@ -35,10 +35,14 @@ class PointCloud:
         self.List_points[p] = position
         x, y = position
         self.drawSinglePoint(x, y, color)
-        
+        self.addToExcel(p)
+
+
+
+    def addToExcel(self, point: Point):
+        x, y = point.position
         Sheet_points.append([len(self.List_points), x, y])
         Sheet_points.parent.save(tableau_list_points)
-
     def drawAllPoints(self):
         for p in self.List_points:
             x, y = p.position
@@ -48,7 +52,7 @@ class PointCloud:
     def drawSinglePoint(x, y, color):
         SimpleGraphics.setFill(color)
         SimpleGraphics.circle(x, y, 10)
-
+        print("caca")
     def createRandomPoints(self, number_of_points, bound_x, bound_y):
         SimpleGraphics.setAutoUpdate(False)
         for _ in range(number_of_points):

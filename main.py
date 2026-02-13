@@ -45,8 +45,8 @@ def Input():
           2 - Basique : afficher les points du tableau \n \n 
           3 - Méthode : afficher la moyenne de ces points \n 
           4 - Méthode : afficher le baricentre de ces points \n \n
-          10 - Système : Nettoyer les points \n 
-          11- la méthode du point deja présent \n 
+          5 - Méthode: la méthode du point deja présent \n 
+          11 - Système : Nettoyer les points \n 
           12 - Système : Quitter\n -------------------------------""")
     while True:
             reponse = str(input("Séléctionner un paramètre : "))
@@ -68,15 +68,15 @@ def Input():
                   baricentre(nuage)
                   setup()
 
-            elif reponse == "10":
+
+            elif reponse == "5":
+                setup()
+                PointDejaPresent(nuage)
+
+            elif reponse == "11":
                   SimpleGraphics.clear()
                   Sheet_points.delete_rows(2, Sheet_points.max_row)
                   Sheet_points.parent.save(tableau_list_points)
-
-
-            elif reponse == "11":
-                PointDejaPresent(nuage)
-                setup()
 
             elif reponse == "12":
                   print("Fermeture du programme...")
