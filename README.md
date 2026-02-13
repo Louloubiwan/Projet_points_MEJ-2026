@@ -10,4 +10,4 @@ pour l'instant nous avons trouver X méthodes differentes:
 
 - [x] méthode par la moyenne
 - [x] méthode par le baricentre 
- 
+- [x] méthode par le "point déja présent"
