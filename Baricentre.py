@@ -1,5 +1,4 @@
 from classes import *
-
 def baricentre(points : PointCloud):
     CouplePoint = {}
     Baricentre = {}
