@@ -88,7 +88,7 @@ class Window(tkinter.Tk):
     def __init__(self, funcs):
         super().__init__()
         self.title("Math en Jeans 2026")
-        self.geometry("400x550")
+        self.geometry("400x600")
 
         # UI Header
         Label(self, text="Interface de Contrôle", font=("Arial", 14, "bold")).pack(pady=10)
