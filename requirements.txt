@@ -1,0 +1,7 @@
+et_xmlfile==2.0.0
+numpy==2.4.4
+openpyxl==3.1.5
+scipy==1.17.1
+simplegraphics-python==1.0.12
+spicy==0.16.0
+tk==0.1.0
